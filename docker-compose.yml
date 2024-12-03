@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: username
+      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: quiz_app
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PORT: 3306
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./quiz-data.sql:/docker-entrypoint-initdb.d/create_database.sql
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+
+networks:
+  app-network:
+    driver: bridge
