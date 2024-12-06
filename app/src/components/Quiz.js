@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = process.env.API_URL || "http://localhost:3001";
+
 function Quiz() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -9,11 +11,9 @@ function Quiz() {
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`http://192.168.1.101:3001/quizzes/${id}/questions`)
-      .then((response) => {
-        setQuestions(response.data);
-      });
+    axios.get(`${API_URL}/quizzes/${id}/questions`).then((response) => {
+      setQuestions(response.data);
+    });
   }, [id]);
 
   const handleSubmit = () => {
@@ -21,7 +21,7 @@ function Quiz() {
       id: answer,
     }));
     axios
-      .post("http://192.168.1.101:3001/submit", { answers: submittedAnswers })
+      .post(`${API_URL}/submit`, { answers: submittedAnswers })
       .then((response) => {
         navigate("/result", { state: { score: response.data.score } });
       });

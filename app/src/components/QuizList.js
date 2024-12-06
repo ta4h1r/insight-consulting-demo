@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = process.env.API_URL || "http://localhost:3001";
+
 function QuizList() {
   const [quizzes, setQuizzes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://192.168.1.101:3001/quizzes").then((response) => {
+    axios.get(`${API_URL}/quizzes`).then((response) => {
       setQuizzes(response.data);
     });
   }, []);

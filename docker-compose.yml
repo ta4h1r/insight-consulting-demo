@@ -19,6 +19,33 @@ services:
     networks:
       - app-network
 
+  app:
+    build:
+      context: ./app
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=https://4560-192-143-157-63.ngrok-free.app
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./server
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_HOST=db
+      - DB_USER=username
+      - DB_PASSWORD=pass
+      - DB_NAME=quiz_app
+    depends_on:
+      - db
+    networks:
+      - app-network
+
 volumes:
   dbdata:
 
