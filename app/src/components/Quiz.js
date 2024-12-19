@@ -14,7 +14,6 @@ function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(""); // State for validation error
 
   useEffect(() => {
     axios
