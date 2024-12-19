@@ -17,7 +17,7 @@ function Quiz() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/quizzes/${id}/questions`)
+      .get(`${API_URL}/api/quizzes/${id}/questions`)
       .then((response) => {
         setQuestions(response.data);
         setLoading(false);
@@ -40,7 +40,7 @@ function Quiz() {
       id: answer,
     }));
     axios
-      .post(`${API_URL}/submit`, { answers: submittedAnswers })
+      .post(`${API_URL}/api/submit`, { answers: submittedAnswers })
       .then((response) => {
         navigate("/result", { state: { score: response.data.score } });
       });

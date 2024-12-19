@@ -12,7 +12,7 @@ function QuizList() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/quizzes`)
+      .get(`${API_URL}/api/quizzes`)
       .then((response) => {
         setQuizzes(response.data);
         setLoading(false);

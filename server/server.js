@@ -21,7 +21,7 @@ db.connect((err) => {
 });
 
 // Get all quizzes
-app.get("/quizzes", (req, res) => {
+app.get("/api/quizzes", (req, res) => {
   const query = "SELECT * FROM quizzes";
   db.query(query, (err, results) => {
     if (err) throw err;
@@ -30,7 +30,7 @@ app.get("/quizzes", (req, res) => {
 });
 
 // Get questions for a quiz
-app.get("/quizzes/:id/questions", (req, res) => {
+app.get("/api/quizzes/:id/questions", (req, res) => {
   const quizId = req.params.id;
   const query = `
         SELECT q.id AS questionId, q.question, a.id AS answerId, a.answer, a.is_correct 
@@ -59,7 +59,7 @@ app.get("/quizzes/:id/questions", (req, res) => {
 });
 
 // Submit answers and calculate score
-app.post("/submit", (req, res) => {
+app.post("/api/submit", (req, res) => {
   const { answers } = req.body;
 
   // Validate answers exist
