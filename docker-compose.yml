@@ -2,8 +2,8 @@ version: "3"
 
 services:
   db:
+    container_name: quiz_db
     image: mysql:latest
-    container_name: db
     restart: unless-stopped
     environment:
       MYSQL_USER: username
@@ -20,24 +20,25 @@ services:
       - app-network
 
   app:
+    container_name: quiz_app
     build:
       context: ./app
     ports:
       - "3000:3000"
-    environment:
-      - API_URL=https://4560-192-143-157-63.ngrok-free.app
+    env_file: "./app/.env"
     depends_on:
       - server
     networks:
       - app-network
 
   server:
+    container_name: quiz_server
     build:
       context: ./server
     ports:
       - "3001:3001"
     environment:
-      - DB_HOST=db
+      - DB_HOST=quiz_db
       - DB_USER=username
       - DB_PASSWORD=pass
       - DB_NAME=quiz_app
