@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Input JSON file
-json_file="quiz.json"
+json_file="quiz-data.json"
 # Output SQL file
-sql_file="quiz.sql"
+sql_file="quiz-data.sql"
 
 # Create the SQL file with table creation statements
 echo "-- CREATE DATABASE quiz_app;" > "$sql_file"
