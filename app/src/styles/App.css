@@ -70,6 +70,10 @@ button {
   font-size: 1rem;
 }
 
+button {
+  margin-top: 1.2rem;
+}
+
 button:hover {
   background-color: #0056b3;
 }
@@ -86,4 +90,12 @@ a {
 
 a:hover {
   color: #0056b3;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
 }

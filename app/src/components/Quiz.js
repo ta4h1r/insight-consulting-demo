@@ -10,6 +10,7 @@ function Quiz() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
+  const [error, setError] = useState(""); // State for validation error
 
   useEffect(() => {
     axios.get(`${API_URL}/quizzes/${id}/questions`).then((response) => {
@@ -18,6 +19,15 @@ function Quiz() {
   }, [id]);
 
   const handleSubmit = () => {
+    // Check if all questions have answers
+    const allAnswered = questions.every((q) => answers[q.id]);
+    if (!allAnswered) {
+      setError("Please answer all questions before submitting.");
+      return;
+    }
+
+    // Clear error and submit answers
+    setError("");
     const submittedAnswers = Object.values(answers).map((answer) => ({
       id: answer,
     }));
@@ -51,6 +61,7 @@ function Quiz() {
           </div>
         ))}
       </div>
+      {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );

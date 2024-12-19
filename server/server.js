@@ -61,9 +61,31 @@ app.get("/quizzes/:id/questions", (req, res) => {
 // Submit answers and calculate score
 app.post("/submit", (req, res) => {
   const { answers } = req.body;
+
+  // Validate answers exist
+  if (!answers || !Array.isArray(answers)) {
+    return res.status(400).json({ error: "Invalid answers format" });
+  }
+
+  // Query database for the correct answers
   const query = "SELECT id, is_correct FROM answers WHERE id IN (?)";
   db.query(query, [answers.map((a) => a.id)], (err, results) => {
     if (err) throw err;
+
+    // Check for missing questions
+    const submittedAnswerIds = answers.map((a) => a.id);
+    const resultIds = results.map((r) => r.id);
+
+    const missingAnswers = submittedAnswerIds.filter(
+      (id) => !resultIds.includes(id),
+    );
+    if (missingAnswers.length > 0) {
+      return res
+        .status(400)
+        .json({ error: "Some answers are invalid or missing" });
+    }
+
+    // Calculate the score
     const score = results.filter((a) => a.is_correct).length;
     res.json({ score });
   });
