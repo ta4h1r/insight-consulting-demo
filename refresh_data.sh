@@ -86,7 +86,7 @@ for quiz_id in "${quiz_ids[@]}"; do
           answer_ids+=("$answer_id")
         done < <(jq -r ".movieQuiz[$((quiz_id-1))].questions[$((question_id-1))].answers | to_entries | .[] | .key + 1" "$json_file")
         for answer_id in "${answer_ids[@]}"; do 
-            echo $quiz_id $question_id $answer_id
+            # echo $quiz_id $question_id $answer_id
             answer=$(jq -r ".movieQuiz[$((quiz_id-1))].questions[$((question_id-1))].answers[$((answer_id-1))].answer" "$json_file")
             is_correct=$(jq -r ".movieQuiz[$((quiz_id-1))].questions[$((question_id-1))].answers[$((answer_id-1))].isCorrect" "$json_file")
             echo "INSERT INTO answers (question_id, answer, is_correct) VALUES ($count, '$answer', $is_correct);" >> "$sql_file"
