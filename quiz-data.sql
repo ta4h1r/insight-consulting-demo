@@ -36,11 +36,11 @@ INSERT INTO questions (quiz_id, question) VALUES (1, "Who is Lord Commander of t
 INSERT INTO questions (quiz_id, question) VALUES (1, "Who was Margaery Tyrell's first husband?");
 INSERT INTO questions (quiz_id, question) VALUES (1, "Who is known as 'The-King-Beyond-the-Wall'?");
 
-INSERT INTO questions (quiz_id, question) VALUES (2, "What is Walt’s middle name?");
+INSERT INTO questions (quiz_id, question) VALUES (2, "What is Walt's middle name?");
 INSERT INTO questions (quiz_id, question) VALUES (2, "What is the plant Walt used to poison Brock?");
 INSERT INTO questions (quiz_id, question) VALUES (2, "What is the name of the boy Todd shot in the desert?");
-INSERT INTO questions (quiz_id, question) VALUES (2, "What is the model of Walt’s original car?");
-INSERT INTO questions (quiz_id, question) VALUES (2, "Before becoming Walt’s partner, Jesse cooked his meth with what special ingredient?");
+INSERT INTO questions (quiz_id, question) VALUES (2, "What is the model of Walt's original car?");
+INSERT INTO questions (quiz_id, question) VALUES (2, "Before becoming Walt's partner, Jesse cooked his meth with what special ingredient?");
 
 INSERT INTO answers (question_id, answer, is_correct) VALUES (1, 'Rivers', false);
 INSERT INTO answers (question_id, answer, is_correct) VALUES (1, 'Waters', false);

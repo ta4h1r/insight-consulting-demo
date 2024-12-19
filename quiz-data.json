@@ -56,7 +56,7 @@
       "name": "Breaking Bad",
       "questions": [
         {
-          "question": "What is Walt’s middle name?",
+          "question": "What is Walt's middle name?",
           "answers": [
             { "answer": "Archibald", "isCorrect": false },
             { "answer": "Matthew", "isCorrect": false },
@@ -80,7 +80,7 @@
           ]
         },
         {
-          "question": "What is the model of Walt’s original car?",
+          "question": "What is the model of Walt's original car?",
           "answers": [
             { "answer": "1987 Toyota Tercel", "isCorrect": false },
             { "answer": "2004 Pontiac Aztek", "isCorrect": true },
@@ -88,7 +88,7 @@
           ]
         },
         {
-          "question": "Before becoming Walt’s partner, Jesse cooked his meth with what special ingredient?",
+          "question": "Before becoming Walt's partner, Jesse cooked his meth with what special ingredient?",
           "answers": [
             { "answer": "Chili powder", "isCorrect": true },
             { "answer": "A1 Steal Sauce", "isCorrect": false },

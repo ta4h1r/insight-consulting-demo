@@ -97,4 +97,4 @@ done
 
 echo "SQL script has been generated and saved to $sql_file"
 
-docker exec -i quiz_db mysql -uusername -ppass quiz_app < quiz.sql
+docker exec -i quiz_db mysql -uusername -ppass quiz_app < quiz-data.sql
