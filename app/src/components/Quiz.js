@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../styles/Quiz.css";
 
 const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
@@ -28,24 +29,28 @@ function Quiz() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Quiz</h1>
-      {questions.map((q) => (
-        <div key={q.id}>
-          <h2>{q.question}</h2>
-          {q.answers.map((a) => (
-            <div key={a.id}>
-              <input
-                type="radio"
-                name={`question-${q.id}`}
-                value={a.id}
-                onChange={() => setAnswers({ ...answers, [q.id]: a.id })}
-              />
-              {a.answer}
+      <div className="quiz-container">
+        {questions.map((q) => (
+          <div key={q.id}>
+            <p className="question">{q.question}</p>
+            <div className="answers">
+              {q.answers.map((a) => (
+                <label key={a.id} className="answer">
+                  <input
+                    type="radio"
+                    name={`question-${q.id}`}
+                    value={a.id}
+                    onChange={() => setAnswers({ ...answers, [q.id]: a.id })}
+                  />
+                  {a.answer}
+                </label>
+              ))}
             </div>
-          ))}
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );

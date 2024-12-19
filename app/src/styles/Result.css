@@ -1,0 +1,33 @@
+.result-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.result-score {
+  font-size: 2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.back-link {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+/* src/components/Result.css */
+.result-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.result-score {
+  font-size: 2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.back-link {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1.2rem;
+}

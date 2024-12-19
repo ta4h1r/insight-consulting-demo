@@ -4,7 +4,6 @@ services:
   db:
     container_name: quiz_db
     image: mysql:latest
-    restart: unless-stopped
     environment:
       MYSQL_USER: username
       MYSQL_PASSWORD: pass
@@ -16,6 +15,7 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
       - ./quiz-data.sql:/docker-entrypoint-initdb.d/create_database.sql
+    restart: unless-stopped
     networks:
       - app-network
 
@@ -44,6 +44,7 @@ services:
       - DB_NAME=quiz_app
     depends_on:
       - db
+    restart: unless-stopped
     networks:
       - app-network
 

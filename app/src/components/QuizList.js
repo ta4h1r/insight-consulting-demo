@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../styles/QuizList.css";
 
 const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
@@ -14,15 +15,18 @@ function QuizList() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>Select a Quiz</h1>
-      <ul>
+      <div className="quiz-list">
         {quizzes.map((quiz) => (
-          <li key={quiz.id}>
-            <Link to={`/quiz/${quiz.id}`}>{quiz.name}</Link>
-          </li>
+          <div key={quiz.id} className="quiz-item">
+            <span>{quiz.name}</span>
+            <Link to={`/quiz/${quiz.id}`}>
+              <button>Start</button>
+            </Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
