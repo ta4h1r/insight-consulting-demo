@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 import "../styles/QuizList.css";
 
 const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
@@ -22,7 +23,11 @@ function QuizList() {
   return (
     <div className="container">
       <h1>Select a Quiz</h1>
-      {loading && <p>Loading quizzes...</p>}
+      {loading && (
+        <div className="spinner">
+          <ClipLoader size={50} color={"#007BFF"} loading={loading} />
+        </div>
+      )}
       {!loading && quizzes.length === 0 && <p>No quizzes available.</p>}
       <div className="quiz-list">
         {quizzes.map((quiz) => (

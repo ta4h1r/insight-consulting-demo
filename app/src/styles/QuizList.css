@@ -19,3 +19,11 @@
   background: #b2ebf2;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust based on your layout */
+  margin-top: 1rem;
+}

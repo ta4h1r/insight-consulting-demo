@@ -28,3 +28,26 @@
   background: #007bff;
   color: white;
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust based on your layout */
+  margin-top: 1rem;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast--error {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.Toastify__toast--success {
+  background-color: #4caf50;
+  color: white;
+}
