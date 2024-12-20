@@ -1,7 +1,23 @@
 #!/bin/bash
 
 # Input JSON file
-json_file="quiz-data.json"
+json_file=""
+while getopts "f:" opt; do
+  case $opt in
+    f)
+      json_file=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG"
+      exit 1; 
+      ;;
+  esac
+done
+
+if [ -z $json_file ]; then 
+  json_file="quiz-data.json"
+fi 
+
 # Output SQL file
 sql_file="quiz-data.sql"
 
@@ -98,3 +114,5 @@ done
 echo "SQL script has been generated and saved to $sql_file"
 
 docker exec -i quiz_db mysql -uusername -ppass quiz_app < quiz-data.sql
+
+echo "Database has been updated."
