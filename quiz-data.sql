@@ -29,6 +29,7 @@ SET foreign_key_checks = 1;
 
 INSERT INTO quizzes (name) VALUES ("Game of Thrones");
 INSERT INTO quizzes (name) VALUES ("Breaking Bad");
+INSERT INTO quizzes (name) VALUES ("My Quiz");
 
 INSERT INTO questions (quiz_id, question) VALUES (1, "What is the surname given to bastards born in Dorne?");
 INSERT INTO questions (quiz_id, question) VALUES (1, "'The Mountain' is the nickname for which character?");
@@ -41,6 +42,10 @@ INSERT INTO questions (quiz_id, question) VALUES (2, "What is the plant Walt use
 INSERT INTO questions (quiz_id, question) VALUES (2, "What is the name of the boy Todd shot in the desert?");
 INSERT INTO questions (quiz_id, question) VALUES (2, "What is the model of Walt's original car?");
 INSERT INTO questions (quiz_id, question) VALUES (2, "Before becoming Walt's partner, Jesse cooked his meth with what special ingredient?");
+
+INSERT INTO questions (quiz_id, question) VALUES (3, "Question1");
+INSERT INTO questions (quiz_id, question) VALUES (3, "Question2");
+INSERT INTO questions (quiz_id, question) VALUES (3, "Question3");
 
 INSERT INTO answers (question_id, answer, is_correct) VALUES (1, 'Rivers', false);
 INSERT INTO answers (question_id, answer, is_correct) VALUES (1, 'Waters', false);
@@ -78,4 +83,11 @@ INSERT INTO answers (question_id, answer, is_correct) VALUES (9, '2006 PT Cruise
 INSERT INTO answers (question_id, answer, is_correct) VALUES (10, 'Chili powder', true);
 INSERT INTO answers (question_id, answer, is_correct) VALUES (10, 'A1 Steal Sauce', false);
 INSERT INTO answers (question_id, answer, is_correct) VALUES (10, 'Oregano', false);
+
+INSERT INTO answers (question_id, answer, is_correct) VALUES (11, 'correct', true);
+INSERT INTO answers (question_id, answer, is_correct) VALUES (11, 'wrong', false);
+INSERT INTO answers (question_id, answer, is_correct) VALUES (11, 'wrong', false);
+INSERT INTO answers (question_id, answer, is_correct) VALUES (12, 'correct', true);
+INSERT INTO answers (question_id, answer, is_correct) VALUES (13, 'correct', true);
+INSERT INTO answers (question_id, answer, is_correct) VALUES (13, 'wrong', false);
 

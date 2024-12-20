@@ -96,6 +96,31 @@
           ]
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "My Quiz",
+      "questions": [
+        {
+          "question": "Question1",
+          "answers": [
+            { "answer": "correct", "isCorrect": true },
+            { "answer": "wrong", "isCorrect": false },
+            { "answer": "wrong", "isCorrect": false }
+          ]
+        },
+        {
+          "question": "Question2",
+          "answers": [{ "answer": "correct", "isCorrect": true }]
+        },
+        {
+          "question": "Question3",
+          "answers": [
+            { "answer": "correct", "isCorrect": true },
+            { "answer": "wrong", "isCorrect": false }
+          ]
+        }
+      ]
     }
   ]
 }
