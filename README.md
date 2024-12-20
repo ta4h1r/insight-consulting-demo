@@ -71,7 +71,7 @@ docker-compose up -d --build
 ### **Database**
 
 - MySQL database to store quiz and question data.
-- The schema is initialized using `quiz-data.sql`. You may use the utility script `refresh-data.sh -f /path/to/quiz-data.json` to update the database whenever changes are made to the `quiz-data.json` file.
+- The schema is initialized using `quiz-data.sql`. You may use the utility script `refresh-data.sh -f /path/to/quiz-data.json` to update the database whenever changes are made to the `quiz-data.json` file. Please ensure that `quiz-data.json` is formatted correctly and that there are no errors when running the utility script. 
 
 ---
 
