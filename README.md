@@ -41,13 +41,13 @@ cd <repository-folder>
 ### 2. Build and Run the Containers
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 ### 3. Access the Application
 
-- **Frontend**: Open your browser and navigate to `http://localhost`.
-- **Backend API**: Accessible at `http://localhost/api`.
+- **Frontend**: Open your browser and navigate to `http://localhost:8080`.
+- **Backend API**: Accessible at `http://localhost:3001/api`.
 
 ---
 
@@ -70,7 +70,7 @@ docker-compose up --build
 ### **Database**
 
 - MySQL database to store quiz and question data.
-- The schema is initialized using `create_database.sql`.
+- The schema is initialized using `quiz-data.sql`. You may use the utility script `refresh-data.sh -f /path/to/quiz-data.json` to update the database whenever changes are made to the `quiz-data.json` file.
 
 ---
 
@@ -87,7 +87,7 @@ The application uses the following environment variables:
 
 ### Frontend
 
-- **REACT_APP_API_URL**: Backend API URL (default: `http://localhost/api`).
+- **REACT_APP_API_URL**: Backend API URL (default: `http://localhost:3001`).
 
 ---
 
@@ -110,10 +110,11 @@ docker-compose down -v
 ## Notes
 
 - Ensure that port `8080` (frontend), `3001` (backend), and `3306` (MySQL) are not occupied by other services.
+- When starting the app for the first time, you may see "No quizzes available" on the frontend. Give it a minute for the database to setup and inject some test data, then refresh the page. 
 - If you need to make changes to the app, rebuild the containers using:
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 ---
