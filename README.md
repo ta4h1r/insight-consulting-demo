@@ -24,6 +24,7 @@ Ensure you have the following installed on your system:
 
 - **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
+- **jq**: [Install jq](https://jqlang.github.io/jq/download/) (Optional)
 
 ---
 
