@@ -82,8 +82,8 @@ The application uses the following environment variables:
 ### Backend
 
 - **DB_HOST**: Database hostname (default: `db` for Docker networking).
-- **DB_USER**: Database user (default: `root`).
-- **DB_PASSWORD**: Database password (default: `example`).
+- **DB_USER**: Database user (default: `username`).
+- **DB_PASSWORD**: Database password (default: `pass`).
 - **DB_NAME**: Database name (default: `quiz_app`).
 
 ### Frontend
@@ -143,4 +143,3 @@ docker-compose up -d --build
 - Add more robust error handling.
 - Improve quiz management (e.g., create quizzes dynamically).
 
----
